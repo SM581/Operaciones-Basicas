@@ -29,85 +29,298 @@ public class ComparacionNumerica extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         lblNumero1 = new javax.swing.JLabel();
-        btnComprobar = new javax.swing.JButton();
         txtIngresarnumero2 = new javax.swing.JTextField();
+        btnComprobarPerfecto = new javax.swing.JButton();
+        btnPrimo = new javax.swing.JButton();
+        btnSumatoria = new javax.swing.JButton();
+        btnRaiz = new javax.swing.JButton();
+        lblMensaje = new javax.swing.JLabel();
+        lblMensajeLista = new javax.swing.JLabel();
+        lblMensaje1 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        lblTitulo.setText("Comparación");
+        jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
+        jPanel2.setBackground(new java.awt.Color(153, 255, 204));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, null, new java.awt.Color(0, 204, 204)));
+
+        lblTitulo.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        lblTitulo.setText("Comparación Númerica");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(lblTitulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jPanel3.setBackground(new java.awt.Color(0, 204, 204));
+
+        lblNumero1.setBackground(new java.awt.Color(0, 153, 153));
+        lblNumero1.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
         lblNumero1.setText("Ingrese un número: ");
 
-        btnComprobar.setText("Comprobar");
-        btnComprobar.addActionListener(new java.awt.event.ActionListener() {
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblNumero1, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(8, Short.MAX_VALUE))
+        );
+
+        btnComprobarPerfecto.setBackground(new java.awt.Color(0, 204, 204));
+        btnComprobarPerfecto.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnComprobarPerfecto.setText("Perfecto");
+        btnComprobarPerfecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnComprobarActionPerformed(evt);
+                btnComprobarPerfectoActionPerformed(evt);
             }
         });
+
+        btnPrimo.setBackground(new java.awt.Color(0, 204, 204));
+        btnPrimo.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnPrimo.setText("Primo");
+        btnPrimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrimoActionPerformed(evt);
+            }
+        });
+
+        btnSumatoria.setBackground(new java.awt.Color(0, 204, 204));
+        btnSumatoria.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnSumatoria.setText("Sumatoria");
+        btnSumatoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSumatoriaActionPerformed(evt);
+            }
+        });
+
+        btnRaiz.setBackground(new java.awt.Color(0, 204, 204));
+        btnRaiz.setFont(new java.awt.Font("Rockwell", 1, 14)); // NOI18N
+        btnRaiz.setText("Raíz");
+        btnRaiz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRaizActionPerformed(evt);
+            }
+        });
+
+        lblMensaje.setBackground(new java.awt.Color(204, 255, 204));
+        lblMensaje.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        lblMensaje.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lblMensajeLista.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        lblMensajeLista.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lblMensaje1.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
+        lblMensaje1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(txtIngresarnumero2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnRaiz, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnSumatoria, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                            .addComponent(btnPrimo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnComprobarPerfecto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblMensajeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(14, 14, 14))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtIngresarnumero2))
+                .addGap(33, 33, 33)
+                .addComponent(btnComprobarPerfecto)
+                .addGap(8, 8, 8)
+                .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(8, 8, 8)
+                .addComponent(btnPrimo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblMensajeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(btnSumatoria)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(53, 53, 53))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(btnRaiz)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnComprobar)
-                        .addGap(65, 65, 65))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(118, 118, 118))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(lblNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(txtIngresarnumero2, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 90, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(lblTitulo)
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblNumero1)
-                    .addComponent(txtIngresarnumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                .addComponent(btnComprobar)
-                .addGap(75, 75, 75))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnComprobarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobarActionPerformed
+    private void btnComprobarPerfectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobarPerfectoActionPerformed
         // TODO add your handling code here:
         
-      int n1 = Integer.parseInt(txtIngresarnumero2.getText()) ;
-      int numeroPerfecto = n1;
-      int sumaDivisores = 0;
-      
-      for(int i =1; i<= n1/2; i++){
-          if(n1%i==0){
-              sumaDivisores += i;
-          }
-          return 0;
-      }
-      
-        if (numeroPerfecto(n1)) {
-            JOptionPane.showMessageDialog(rootPane,"es número perfecto"+n1);
-        }else{
-            JOptionPane.showMessageDialog(rootPane,"el número no es perfecto","Error",JOptionPane.ERROR_MESSAGE);
+    int n1 = Integer.parseInt(txtIngresarnumero2.getText());
+    
+    //Rango entre 1 al 500
+     if (n1<1 || n1>500){
+        lblMensaje1.setText("El número ingresado debe estar entre 1 y 500");  
+    }
+     //Indique si un número es perfecto//
+    int sumaDivisores = 0;
+    for (int i = 1; i <= n1 / 2; i++) {
+        if (n1 % i == 0) {
+        sumaDivisores += i;
         }
-      txtIngresarnumero2.setText("");
+    }
+        if (sumaDivisores == n1) {
+            lblMensaje.setText("El número es perfecto");
+        } else {
+            lblMensaje.setText("El número no es perfecto");
+        }
+    }//GEN-LAST:event_btnComprobarPerfectoActionPerformed
+ 
+    private void btnSumatoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumatoriaActionPerformed
+        // TODO add your handling code here:
+        int n1 = Integer.parseInt(txtIngresarnumero2.getText());
+        int suma = 0;
+        boolean primo1 = true;
+        if (n1 < 500) {
+            
+            //Calcular la suma de numeros menore n1
+            for(int i =2; i < n1; i++){
+              suma += i;
+              
+                if (n1 % i == 0){
+                    primo1 = false; //Si es divisible por algún número distintp de 1 y sí mismo,no es primo
+                        break;
+                }       
+            }
+           if (primo1) {
+            lblMensaje.setText("El número es primo");
+        } else {
+            lblMensaje.setText("El número no es primo");
+        }
+           lblMensaje1.setText("La suma primos números menores " +n1+ " es: " +suma);
+        }
         
-    }//GEN-LAST:event_btnComprobarActionPerformed
+    }//GEN-LAST:event_btnSumatoriaActionPerformed
+
+    private void btnRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaizActionPerformed
+        // TODO= add your handling code here:
+        int n1 = Integer.parseInt(txtIngresarnumero2.getText());
+        double raizCuadrado = Math.sqrt(n1);
+        
+        if (n1 < 500){
+            boolean primo1 = true;
+            if (n1 < 2){
+                primo1 = false;
+            }else{
+                for (int i = 2; i <= Math.sqrt(n1);i++){
+                    if (n1 % i == 0){
+                        primo1 = false;
+                        break;
+                    }
+                }
+            }
+             
+        }
+        lblMensaje1.setText("La raiz Cuadrada de " + n1 + " es: " + raizCuadrado);
+    }//GEN-LAST:event_btnRaizActionPerformed
+
+    private void btnPrimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimoActionPerformed
+        // TODO add your handling code here:
+        int n1 = Integer.parseInt(txtIngresarnumero2.getText());
+        boolean primo1 = true;
+
+    if (n1 >= 7) {
+        primo1 = true; // Inicialmente establecido como verdadero
+
+        for (int i = 2; i < n1; i++) {
+            if (n1 % i == 0) {
+                primo1 = false; // Si es divisible por algún número distinto de 1 y sí mismo, no es primo
+                break;
+            }
+        }
+
+        if (primo1) {
+            lblMensaje.setText("El número es primo");
+            // Lista de los números primos menores que n1
+            StringBuilder primosMenores = new StringBuilder(); 
+            for (int i = 2; i < n1; i++) {
+                boolean esPrimo = true;
+                for (int j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        esPrimo = false;
+                        break;
+                    }
+                }
+                if (esPrimo) {
+                    primosMenores.append(i).append(" ");
+                }
+            }
+            lblMensajeLista.setText("Primeros Menores que " + n1 + " : " + primosMenores);
+        } else {
+            lblMensaje.setText("El número no es primo");
+        }
+    } else {
+        lblMensaje.setText("Ingrese un número mayor o igual a 7");
+    }
+                  
+    }//GEN-LAST:event_btnPrimoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,14 +358,35 @@ public class ComparacionNumerica extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnComprobar;
+    private javax.swing.JButton btnComprobarPerfecto;
+    private javax.swing.JButton btnPrimo;
+    private javax.swing.JButton btnRaiz;
+    private javax.swing.JButton btnSumatoria;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblMensaje;
+    private javax.swing.JLabel lblMensaje1;
+    private javax.swing.JLabel lblMensajeLista;
     private javax.swing.JLabel lblNumero1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtIngresarnumero2;
     // End of variables declaration//GEN-END:variables
 
     private boolean numeroPerfecto(int n1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private int sumaPrimosMenores(int n1) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private boolean primo(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    private int esPrimo(int n1) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
