@@ -40,7 +40,6 @@ public class ComparacionNumerica extends javax.swing.JFrame {
         btnSumatoria = new javax.swing.JButton();
         btnRaiz = new javax.swing.JButton();
         lblMensaje = new javax.swing.JLabel();
-        lblMensajeLista = new javax.swing.JLabel();
         lblMensaje1 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
@@ -135,9 +134,6 @@ public class ComparacionNumerica extends javax.swing.JFrame {
         lblMensaje.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         lblMensaje.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lblMensajeLista.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
-        lblMensajeLista.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         lblMensaje1.setFont(new java.awt.Font("Rockwell", 0, 12)); // NOI18N
         lblMensaje1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
@@ -163,7 +159,6 @@ public class ComparacionNumerica extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblMensajeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(14, 14, 14))))
         );
@@ -177,23 +172,20 @@ public class ComparacionNumerica extends javax.swing.JFrame {
                     .addComponent(txtIngresarnumero2))
                 .addGap(33, 33, 33)
                 .addComponent(btnComprobarPerfecto)
-                .addGap(8, 8, 8)
-                .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(btnPrimo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblMensajeLista, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(btnSumatoria)
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnPrimo)
+                    .addComponent(lblMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                        .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53))
+                        .addGap(37, 37, 37)
+                        .addComponent(btnSumatoria))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(btnRaiz)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(45, 45, 45)
+                        .addComponent(lblMensaje1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(25, 25, 25)
+                .addComponent(btnRaiz)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -213,20 +205,21 @@ public class ComparacionNumerica extends javax.swing.JFrame {
     private void btnComprobarPerfectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnComprobarPerfectoActionPerformed
         // TODO add your handling code here:
         
-    int n1 = Integer.parseInt(txtIngresarnumero2.getText());
+    int n1 = Integer.parseInt(txtIngresarnumero2.getText()); 
     
     //Rango entre 1 al 500
-     if (n1<1 || n1>500){
+     if (n1 < 1 || n1 > 500){ //El ciclo if verifica dos condición de que el numero ingresado "n1" sea menor a 1 y "n1" menor que 500
         lblMensaje1.setText("El número ingresado debe estar entre 1 y 500");  
     }
      //Indique si un número es perfecto//
-    int sumaDivisores = 0;
-    for (int i = 1; i <= n1 / 2; i++) {
-        if (n1 % i == 0) {
-        sumaDivisores += i;
-        }
-    }
-        if (sumaDivisores == n1) {
+    int sumaDivisores = 0; // Declara una variable sumaDivisores que sea inicia con el valor 0
+    for (int i = 1; i <= n1 / 2; i++) { //Inicia el bucle for, declara la variable "i" con entero 
+        // que itera desde 1, la iteración verifica i sea es mayor o igual a 1 y que el numero igresado sea divisible para 2
+        if (n1 % i == 0) { //Verifica que n1 sea divible para i igualando a 0
+        sumaDivisores += i; // Se acumula la suma de los divisores de n1
+        }//cierra el ciclo if
+    }//cierra el cliclo for
+        if (sumaDivisores == n1) { //Verifica si la variable sumaDivisores es igual n1
             lblMensaje.setText("El número es perfecto");
         } else {
             lblMensaje.setText("El número no es perfecto");
@@ -236,90 +229,56 @@ public class ComparacionNumerica extends javax.swing.JFrame {
     private void btnSumatoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumatoriaActionPerformed
         // TODO add your handling code here:
         int n1 = Integer.parseInt(txtIngresarnumero2.getText());
-        int suma = 0;
-        boolean primo1 = true;
-        if (n1 < 500) {
+        int suma = 0; 
+        boolean esPrimo = true; // La variable esPrimo es igual a verdadera hasta que no se cumpla la condición de que el numero no es primo
+        if (n1 >= 500) { //El ciclo if verifica que n1 se menor o igual a 500 que es el numero maximo 
             
             //Calcular la suma de numeros menore n1
-            for(int i =2; i < n1; i++){
-              suma += i;
-              
-                if (n1 % i == 0){
-                    primo1 = false; //Si es divisible por algún número distintp de 1 y sí mismo,no es primo
-                        break;
-                }       
+            for(int i =2; i < n1; i++){// Dentro del bucle for se verifica que i sea igual a 2 y mientras i sea menor que n1 y va aumentando 1
+              suma += i; //En la variable suma se almacena la suma de los numeros desde 2 hasta n1 (que es el numero ingresado)
+                if (n1 % i == 0){//Verifica que n1 sea divible para i igualando a 0
+                    esPrimo = false; //Si se encuentra que n1 es divisible para 1, se establese la variable esPrimo como falso, e indicando que no es primo                        break;
+                }  
+                lblMensaje1.setText("La suma primos números menores " +n1+ " es: " +suma);
             }
-           if (primo1) {
-            lblMensaje.setText("El número es primo");
-        } else {
-            lblMensaje.setText("El número no es primo");
-        }
-           lblMensaje1.setText("La suma primos números menores " +n1+ " es: " +suma);
-        }
-        
+          
     }//GEN-LAST:event_btnSumatoriaActionPerformed
-
+}
     private void btnRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRaizActionPerformed
         // TODO= add your handling code here:
         int n1 = Integer.parseInt(txtIngresarnumero2.getText());
-        double raizCuadrado = Math.sqrt(n1);
         
-        if (n1 < 500){
-            boolean primo1 = true;
-            if (n1 < 2){
-                primo1 = false;
-            }else{
-                for (int i = 2; i <= Math.sqrt(n1);i++){
-                    if (n1 % i == 0){
-                        primo1 = false;
-                        break;
-                    }
-                }
-            }
-             
-        }
-        lblMensaje1.setText("La raiz Cuadrada de " + n1 + " es: " + raizCuadrado);
+        if (n1 <= 500){// se esta indicando que n1 sea menor o igual a 500 
+            double raizCuadrada = Math.sqrt (n1); //se utiliza un metodo de la clase math para calcular la raiz de n1 en la variable raizCuadrada
+        lblMensaje1.setText("La raiz Cuadrada de " + n1 + " es: " + raizCuadrada);
     }//GEN-LAST:event_btnRaizActionPerformed
+ }
 
     private void btnPrimoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrimoActionPerformed
-        // TODO add your handling code here:
-        int n1 = Integer.parseInt(txtIngresarnumero2.getText());
-        boolean primo1 = true;
-
-    if (n1 >= 7) {
-        primo1 = true; // Inicialmente establecido como verdadero
-
-        for (int i = 2; i < n1; i++) {
-            if (n1 % i == 0) {
-                primo1 = false; // Si es divisible por algún número distinto de 1 y sí mismo, no es primo
-                break;
-            }
+       int n1 = Integer.parseInt(txtIngresarnumero2.getText());
+       boolean esPrimo = true; // Se utiliza para determinar n1 sea primo y conste como verdadero caso contrario sera falso indicando que no es primo
+       
+       for (int i = 2; i <= Math.sqrt(n1); i++) {//En el bucle esta verificando si n1 es primo, itera desde 2 hasta la raiz cuadrada de n1
+        //Si n1 es divisible por algun numero entre 2 y la raiz cuadrada de n1, entonces no es primo y termina el bucle
+           if (n1 % i == 0) {
+          break;
         }
-
-        if (primo1) {
-            lblMensaje.setText("El número es primo");
-            // Lista de los números primos menores que n1
-            StringBuilder primosMenores = new StringBuilder(); 
-            for (int i = 2; i < n1; i++) {
-                boolean esPrimo = true;
-                for (int j = 2; j < i; j++) {
-                    if (i % j == 0) {
-                        esPrimo = false;
-                        break;
-                    }
-                }
-                if (esPrimo) {
-                    primosMenores.append(i).append(" ");
-                }
-            }
-            lblMensajeLista.setText("Primeros Menores que " + n1 + " : " + primosMenores);
-        } else {
-            lblMensaje.setText("El número no es primo");
-        }
-    } else {
-        lblMensaje.setText("Ingrese un número mayor o igual a 7");
     }
-                  
+       if (esPrimo){
+           StringBuilder primosMenores = new StringBuilder();// se crea un objeto SB llamado primosMenores, es util para concatenacion de catenas
+           
+        for (int i = 2; i < n1; i++) {
+            if (esPrimo) {
+            primosMenores.append(i).append(", ");// Si esPrimo es verdadero, el objeto se utiliza para almacenar y construir una cadena de numeros primos menores que n1 
+        }
+    }
+        if (esPrimo){
+            lblMensaje.setText("El número es primo");
+            }else{
+            lblMensaje.setText("El número es no primo");
+            }
+            lblMensaje1.setText("Primos menores: "+ primosMenores);    
+        }       
     }//GEN-LAST:event_btnPrimoActionPerformed
 
     /**
@@ -368,7 +327,6 @@ public class ComparacionNumerica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblMensaje;
     private javax.swing.JLabel lblMensaje1;
-    private javax.swing.JLabel lblMensajeLista;
     private javax.swing.JLabel lblNumero1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtIngresarnumero2;
